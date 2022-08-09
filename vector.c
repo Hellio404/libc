@@ -106,11 +106,6 @@ void v_clear(vector_t *vt, void (*fn) (void *)) {
 }
 
 void       v_destroy(vector_t *vt, void (*fn) (void *)) {
-    if (fn) {
-        for (void *b = vt->_begin; b != vt->_end; b += vt->_size)
-            fn(b);
-    }
-    
-    free(vt->_begin);
+    v_clear(vt, fn);
     free(vt);
 }
