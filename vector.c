@@ -65,7 +65,7 @@ int v_resize(vector_t *vt, size_t size, const void *default_value, void (*fn) (v
         if (v_reserve(vt, size))
             return 1;
         size_t diff =  size - v_size(vt);
-        for (int i = 0; i < diff; ++i) {
+        for (size_t i = 0; i < diff; ++i) {
             memmove(vt->_end, default_value, vt->_size);
             vt->_end += vt->_size;
         }
