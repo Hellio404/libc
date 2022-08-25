@@ -6,7 +6,7 @@
 /*   By: yfarini <yfarini@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 10:47:36 by yfarini           #+#    #+#             */
-/*   Updated: 2022/08/21 10:55:31 by yfarini          ###   ########.fr       */
+/*   Updated: 2022/08/25 10:14:52 by yfarini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,15 @@ void		*v_begin(t_vector *vt);
  * @return void* the end of the vector
  */
 void		*v_end(t_vector *vt);
+
+/**
+ * @brief return a pointer to the n-th element in the vector
+ * 
+ * @param vt the vector pointer
+ * @param index the possition of the element to get
+ * @return void* the end of the vector
+ */
+void	*v_get(t_vector *vt, size_t index);
 
 /**
  * @brief remove all the elements on vector

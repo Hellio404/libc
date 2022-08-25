@@ -6,7 +6,7 @@
 /*   By: yfarini <yfarini@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 10:31:38 by yfarini           #+#    #+#             */
-/*   Updated: 2022/08/21 10:50:34 by yfarini          ###   ########.fr       */
+/*   Updated: 2022/08/25 09:54:01 by yfarini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,6 +137,11 @@ void	*v_begin(t_vector *vt)
 void	*v_end(t_vector *vt)
 {
 	return (vt->_end);
+}
+
+void	*v_get(t_vector *vt, size_t index)
+{
+	return (v_begin(vt) + vt->_size * index);
 }
 
 void	v_clear(t_vector *vt, void (*fn) (void *))
