@@ -6,7 +6,7 @@
 /*   By: yfarini <yfarini@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 10:31:38 by yfarini           #+#    #+#             */
-/*   Updated: 2022/08/25 09:54:01 by yfarini          ###   ########.fr       */
+/*   Updated: 2022/08/26 15:40:05 by yfarini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,11 @@ void	v_pop(t_vector *vt, void (*fn)(void *))
 {
 	if (vt->_end <= vt->_begin)
 		return ;
+	vt->_end -= vt->_size;
 	if (fn)
-		fn(--vt->_end);
-	else
-		--vt->_end;
+		fn(vt->_end);
+	
+	
 }
 
 int	v_reserve(t_vector *vt, size_t size)
